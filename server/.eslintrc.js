@@ -3,14 +3,21 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ["google", "prettier"],
-  parser: "@typescript-eslint/parser",
+  extends: ['google', 'plugin:import/typescript'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: "module",
+    sourceType: 'module',
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ['@typescript-eslint'],
   rules: {
-    "prettier/prettier": ["error", { singleQuote: true }],
+    '@typescript-eslint/quotes': [
+      'error',
+      'single',
+      {
+        allowTemplateLiterals: true,
+      },
+    ],
+    'new-cap': 0,
   },
 };
