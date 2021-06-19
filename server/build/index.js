@@ -5,11 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var morgan_1 = __importDefault(require("morgan"));
+var routes_1 = __importDefault(require("./routes"));
 var app = express_1.default();
 var port = 3000;
-app.use(morgan_1.default('common'));
-app.get('/', function (req, res) {
-    res.send('succfully accessed GET /');
+app.use(morgan_1.default('short'));
+app.use('/api', routes_1.default);
+app.get('/health', function (req, res) {
+    res.send('OK');
 });
 app.listen(port, function () {
     console.log('Welcome to image resize service');
