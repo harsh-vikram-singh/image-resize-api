@@ -4,7 +4,7 @@
   "description": "Server for the service to resize images",
   "main": "index.ts",
   "scripts": {
-    "build": "npx tsc",
+    "build": "npx prettier --write src/ && npx tsc",
     "start:dev": "nodemon ./src/index.ts"
   },
   "author": "Harsh Vikram Singh",
@@ -14,7 +14,14 @@
     "@types/morgan": "^1.9.2",
     "@types/node": "^15.12.2",
     "@types/nodemon": "^1.19.0",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.28.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.24.0",
     "nodemon": "^2.0.7",
+    "prettier": "2.3.1",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.2"
   },
